@@ -17,7 +17,7 @@ class AddPhoto extends Component {
             imageLink: imageLink
         }
         if(imageLink && imageDescription) {
-            this.props.addPost(post)
+            this.props.startAddingPost(post)
             this.props.onHistory.push('/')
         }
 

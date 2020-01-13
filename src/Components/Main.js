@@ -12,16 +12,21 @@ class Main extends Component {
         super()
     }
 
+    componentDidMount(){
+        this.props.startLoadingPost()
+        this.props.startLoadingComments()
+    }
+
     render() {
         return (
         <div>
             <h1>
                 <Link to="/">Photowall</Link>
             </h1>
-            <Route exact path="/" render={() => (
+            <Route exact path="/" render={({history}) => (
                  <div>
 
-                    <PhotoWall {...this.props}/>
+                    <PhotoWall {...this.props} onHistory={history}/>
                 </div>
             )}/>
                     
